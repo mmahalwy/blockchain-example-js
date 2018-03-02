@@ -55,7 +55,7 @@ class Blockchain {
       previousHash: this.lastBlock.hash,
     });
 
-    block.mineBlock(this.difficulty);
+    block.mine(this.difficulty);
 
     console.log('Block successfully mined!');
 
@@ -106,7 +106,7 @@ class Block {
     ).toString();
   }
 
-  mineBlock(difficulty) {
+  mine(difficulty) {
     while (
       this.hash.substring(0, difficulty) !== Array(difficulty + 1).join('0')
     ) {
